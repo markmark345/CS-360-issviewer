@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="Spot the International Space Station. ISS sightings and current position"/>
+	<title>ISS Viewer - spot the International Space Station</title>
+</head>
+<body id="home">
+	<div class="container">
+		<nav>
+			<ul>
+				<img class="logo" src="images/logo.png" width="30"/>
+				<li class="selected"><a href="index.html">Home</a></li>
+				<li><a href="tracking.html">Tracking</a></li>
+				<li><a href="about.html">About</a></li>
+				<theme-settings></theme-settings>
+			</ul>
+		</nav>
+
+		<header>
+			<h2>Spot the International Space Station</h2>
+			<p>The ISS appears very bright on the night sky, which allows it to be spotted with the naked eye. This app gives you a list of passes that will be visible in your city. Type in your location below to find the next sighting opportunities!</p>
+		</header>
+
+		<main>
+			<label>Your Location:</label>
+			<input id="location" type="text" placeholder="city name" autofocus spellcheck="false"/><span class="spinner"></span>
+
+			<div class="map" id="map"></div>
+			<small class="location-info">Provide a location to see a list of upcoming passes</small>
+
+			<div id="no-passes-message" class="no-passes-message hidden">
+				<p>No visible passes in the next 10 days :(</p>
+				<p>Try a different location or come back another day</p>
+			</div>
+
+			<div class="sightings hidden">
+				<div class="sightings-list"></div>
+
+				<div class="sightings-details">
+					<span id="detail-date"></span>
+					<span class="bold">Start</span>
+					<span class="bold">Highest point</span>
+					<span class="bold">End</span>
+					<span id="detail-tz-name" class="bold"></span>
+					<span id="detail-time-start"></span>
+					<span id="detail-time-max"></span>
+					<span id="detail-time-end"></span>
+					<span class="bold">Elevation</span>
+					<span id="detail-alt-start"></span>
+					<span id="detail-alt-max"></span>
+					<span id="detail-alt-end"></span>
+					<span class="bold">Direction</span>
+					<span id="detail-dir-start"></span>
+					<span id="detail-dir-max"></span>
+					<span id="detail-dir-end"></span>
+					<span class="bold" title="Visual magnitude - lower is better">Brightness</span>
+					<span id="detail-mag-start"></span>
+					<span id="detail-mag-max"></span>
+					<span id="detail-mag-end"></span>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>
