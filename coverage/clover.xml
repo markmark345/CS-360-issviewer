@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1639414803830" clover="3.2.0">
+  <project timestamp="1639414803830" name="All files">
+    <metrics statements="122" coveredstatements="93" conditionals="20" coveredconditionals="10" methods="25" coveredmethods="20" elements="167" coveredelements="123" complexity="0" loc="122" ncloc="122" packages="1" files="3" classes="3"/>
+    <file name="app.js" path="C:\projects\cs360\CS_360_issviewer\app.js">
+      <metrics statements="89" coveredstatements="65" conditionals="14" coveredconditionals="7" methods="11" coveredmethods="9"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="1" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="25" count="3" type="stmt"/>
+      <line num="26" count="3" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="36" count="4" type="cond" truecount="1" falsecount="1"/>
+      <line num="37" count="4" type="stmt"/>
+      <line num="43" count="5" type="stmt"/>
+      <line num="44" count="5" type="stmt"/>
+      <line num="45" count="5" type="stmt"/>
+      <line num="46" count="5" type="stmt"/>
+      <line num="47" count="5" type="stmt"/>
+      <line num="49" count="5" type="stmt"/>
+      <line num="50" count="5" type="stmt"/>
+      <line num="51" count="5" type="stmt"/>
+      <line num="54" count="5" type="stmt"/>
+      <line num="61" count="5" type="stmt"/>
+      <line num="66" count="2" type="stmt"/>
+      <line num="68" count="2" type="stmt"/>
+      <line num="70" count="2" type="stmt"/>
+      <line num="71" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="73" count="2" type="stmt"/>
+      <line num="74" count="2" type="stmt"/>
+      <line num="75" count="2" type="stmt"/>
+      <line num="76" count="2" type="stmt"/>
+      <line num="77" count="2" type="stmt"/>
+      <line num="78" count="2" type="stmt"/>
+      <line num="79" count="2" type="stmt"/>
+      <line num="80" count="2" type="stmt"/>
+      <line num="82" count="2" type="stmt"/>
+      <line num="83" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="85" count="2" type="stmt"/>
+      <line num="86" count="2" type="stmt"/>
+      <line num="89" count="0" type="stmt"/>
+      <line num="90" count="0" type="stmt"/>
+      <line num="95" count="0" type="stmt"/>
+      <line num="96" count="0" type="stmt"/>
+      <line num="100" count="0" type="stmt"/>
+      <line num="106" count="0" type="stmt"/>
+      <line num="108" count="0" type="stmt"/>
+      <line num="109" count="0" type="stmt"/>
+      <line num="110" count="0" type="stmt"/>
+      <line num="112" count="0" type="stmt"/>
+      <line num="116" count="0" type="stmt"/>
+      <line num="122" count="6" type="stmt"/>
+      <line num="130" count="1" type="stmt"/>
+      <line num="132" count="1" type="stmt"/>
+      <line num="134" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="136" count="0" type="stmt"/>
+      <line num="137" count="0" type="stmt"/>
+      <line num="140" count="1" type="stmt"/>
+      <line num="143" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="145" count="0" type="stmt"/>
+      <line num="146" count="0" type="stmt"/>
+      <line num="147" count="0" type="stmt"/>
+      <line num="148" count="0" type="stmt"/>
+      <line num="150" count="0" type="stmt"/>
+      <line num="152" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="154" count="0" type="stmt"/>
+      <line num="157" count="0" type="stmt"/>
+      <line num="158" count="0" type="stmt"/>
+      <line num="162" count="1" type="stmt"/>
+      <line num="164" count="1" type="stmt"/>
+      <line num="174" count="1" type="stmt"/>
+      <line num="175" count="1" type="stmt"/>
+      <line num="179" count="0" type="stmt"/>
+      <line num="180" count="0" type="stmt"/>
+      <line num="184" count="1" type="stmt"/>
+      <line num="186" count="1" type="stmt"/>
+      <line num="188" count="1" type="stmt"/>
+      <line num="193" count="1" type="stmt"/>
+      <line num="195" count="1" type="stmt"/>
+      <line num="198" count="1" type="stmt"/>
+      <line num="199" count="1" type="stmt"/>
+      <line num="200" count="1" type="stmt"/>
+      <line num="202" count="1" type="stmt"/>
+    </file>
+    <file name="cache.js" path="C:\projects\cs360\CS_360_issviewer\cache.js">
+      <metrics statements="16" coveredstatements="15" conditionals="6" coveredconditionals="3" methods="8" coveredmethods="7"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="10" count="3" type="stmt"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="14" count="3" type="cond" truecount="1" falsecount="1"/>
+      <line num="16" count="3" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="28" count="2" type="stmt"/>
+      <line num="30" count="2" type="stmt"/>
+      <line num="32" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="34" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="35" count="2" type="stmt"/>
+      <line num="36" count="2" type="stmt"/>
+      <line num="43" count="1" type="stmt"/>
+    </file>
+    <file name="predict.js" path="C:\projects\cs360\CS_360_issviewer\predict.js">
+      <metrics statements="17" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="30" count="0" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+      <line num="35" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

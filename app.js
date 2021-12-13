@@ -66,18 +66,20 @@ async function startLoadTleData()
 	try
 	{
 		const data = await cache.getTle();
-		console.log(data);
 
+		console.log('startLoadTleData data is : ', data);
 		if (data != null)
 		{
 			var tleArray = tleStringToArray(data);
 			var tleDay = Number(tleArray[1].substring(20, 32));
+			console.log('tleDay : ', tleDay);
 			var utcNowString = new Date().toUTCString();
 			var utcNow = new Date(utcNowString);
 			var diff = utcNow - new Date(utcNow.getFullYear(), 0, 0);
 			var currentDay = diff / (1000*60*60*24);
-
+			console.log('currentDay : ', currentDay);
 			// check if cached TLE is recent enough
+			console.log('diff : ', currentDay - tleDay);
 			if (currentDay - tleDay < 1)
 			{
 				console.log("cached TLE is recent enough and will be used");
@@ -185,7 +187,10 @@ app.get("/track", (req, res) =>
 });
 app.get("/predict/:locationName", predictResponse);
 
-app.listen(PORT, () =>
+// app.get("/test", (req, res) => {
+// 	res.status(200).send('test');
+// });
+var server = app.listen(PORT, () =>
 {
 	console.log(`Listening on ${PORT}`);
 });
@@ -193,3 +198,5 @@ app.listen(PORT, () =>
 startLoadTleData();
 setInterval(fetchTleData, MS_PER_HOUR); // fetch new TLE hourly
 setInterval(updatePosition, ISS_TRACK_INTERVAL_MS); // calculate and store current position periodically
+
+module.exports = server;

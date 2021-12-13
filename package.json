@@ -4,7 +4,7 @@
   "description": "spot the International Space Station, get pass predictions",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watchAll --coverage",
     "build": "webpack",
     "build-prod": "webpack -p",
     "server": "webpack-dev-server",
@@ -32,6 +32,12 @@
     "webpack-dev-server": "^3.11.2"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "babel-cli": "^6.26.0",
+    "babel-plugin-rewire": "^1.2.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^27.4.4",
+    "nodemon": "^1.19.4",
+    "superagent": "^6.1.0",
+    "supertest": "^6.1.6"
   }
 }
