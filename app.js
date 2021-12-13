@@ -66,6 +66,7 @@ async function startLoadTleData()
 	try
 	{
 		const data = await cache.getTle();
+		console.log(data);
 
 		if (data != null)
 		{
