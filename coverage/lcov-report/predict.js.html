@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.47% </span>
+                <span class="strong">11.76% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/17</span>
+                <span class='fraction'>2/17</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.47% </span>
+                <span class="strong">11.76% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/17</span>
+                <span class='fraction'>2/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -108,34 +108,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,36 +144,36 @@
 module.exports =
 {
 	// execute the python script to get a list of passes
-	getPasses: async (tleData, lon, lat) =&gt;
+	getPasses: <span class="fstat-no" title="function not covered" >as</span>ync (tleData, lon, lat) =&gt;
 	{
-		const numDays = 10;
-		const scriptName = "predict.py";
-		const pyPredict = spawn("python", ["predict.py", JSON.stringify(tleData), lon, lat, numDays]);
+		const numDays = <span class="cstat-no" title="statement not covered" >10;</span>
+		const scriptName = <span class="cstat-no" title="statement not covered" >"predict.py";</span>
+		const pyPredict = <span class="cstat-no" title="statement not covered" >spawn("python", ["predict.py", JSON.stringify(tleData), lon, lat, numDays]);</span>
 &nbsp;
-		return new Promise((resolve, reject) =&gt;
+<span class="cstat-no" title="statement not covered" >		return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt;</span>
 		{
-			let dataString = "";
+			let dataString = <span class="cstat-no" title="statement not covered" >"";</span>
 &nbsp;
-			pyPredict.stdout.on("data", data =&gt;
+<span class="cstat-no" title="statement not covered" >			pyPredict.stdout.on("data", <span class="fstat-no" title="function not covered" >da</span>ta =&gt;</span>
 			{
-				dataString += data.toString("utf8");
+<span class="cstat-no" title="statement not covered" >				dataString += data.toString("utf8");</span>
 			});
 &nbsp;
-			pyPredict.stderr.on("data", <span class="fstat-no" title="function not covered" >da</span>ta =&gt;
+<span class="cstat-no" title="statement not covered" >			pyPredict.stderr.on("data", <span class="fstat-no" title="function not covered" >da</span>ta =&gt;</span>
 			{
 <span class="cstat-no" title="statement not covered" >				console.log(`ERROR in ${scriptName}: `, data.toString("utf8"));</span>
 <span class="cstat-no" title="statement not covered" >				reject();</span>
 			});
 &nbsp;
-			pyPredict.on("error", <span class="fstat-no" title="function not covered" >er</span>r =&gt;
+<span class="cstat-no" title="statement not covered" >			pyPredict.on("error", <span class="fstat-no" title="function not covered" >er</span>r =&gt;</span>
 			{
 <span class="cstat-no" title="statement not covered" >				console.log(`ERROR in ${scriptName}: `, err.toString("utf8"));</span>
 <span class="cstat-no" title="statement not covered" >				reject();</span>
 			});
 &nbsp;
-			pyPredict.on("close", code =&gt;
+<span class="cstat-no" title="statement not covered" >			pyPredict.on("close", <span class="fstat-no" title="function not covered" >co</span>de =&gt;</span>
 			{
-				resolve(JSON.parse(dataString));
+<span class="cstat-no" title="statement not covered" >				resolve(JSON.parse(dataString));</span>
 			});
 		});
 	}
@@ -184,7 +184,7 @@ module.exports =
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Tue Dec 14 2021 00:00:03 GMT+0700 (Indochina Time)
+                at Fri Dec 17 2021 02:17:57 GMT+0700 (Indochina Time)
             </div>
         </div>
         <script src="prettify.js"></script>

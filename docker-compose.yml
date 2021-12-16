@@ -1,15 +1,7 @@
 version: '3'
 services:
-  redis-server: 
-    image: 'redis'
-    networks:
-      - redis
+  
   node-app:
     build: .
     ports:
       - "3000:3000"
-    networks:
-      - redis
-networks:
-  redis:
-    driver: bridge
