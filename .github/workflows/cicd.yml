@@ -4,7 +4,7 @@
 name: Mark CICD
 
 on:
- push:
+  push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
