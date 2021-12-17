@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -29,7 +29,7 @@ jobs:
         python-version: '3.9'
         cache: 'pip'
     - run: pip install ephem
-    0
+    
     - name: Start Redis
       uses: supercharge/redis-github-action@1.2.0
       with:
