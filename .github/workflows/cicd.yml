@@ -45,6 +45,12 @@ jobs:
     - run: npm ci
     
     - run: npm run build --if-present
+
+    - name: Install redis cli # so we can test the server
+      run: sudo apt-get install -y redis-tools
+
+    - name: Verify that redis is up
+      run: redis-cli ping
     
     - run: npm test
     
