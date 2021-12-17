@@ -40,7 +40,7 @@ describe("Test app.js", () => {
           });
       });
 
-      test("Expect track return 2000", done => {
+      test("Expect track return 200", done => {
         request(server)
           .get("/track")
           .then(response => {
