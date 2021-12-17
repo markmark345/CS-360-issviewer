@@ -28,16 +28,15 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
-    steps:
-    - uses: actions/setup-python@v2
-    with:
-      python-version: '3.9'
-      cache: 'pip'
-    - run: pip install -r requirements.txt
-    - run: pip test    
-    
 
-
+     - uses: actions/setup-python@v2
+       with:
+         python-version: '3.9.1'
+         cache: 'pip'
+         architecture: 'x64'
+     - run: pip install ephem
+     
+     
     - name: Start Redis
       uses: supercharge/redis-github-action@1.2.0
       with:
