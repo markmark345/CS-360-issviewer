@@ -4,7 +4,7 @@
   "description": "spot the International Space Station, get pass predictions",
   "main": "app.js",
   "scripts": {
-    "test": "jest --watchAll --coverage",
+    "test": "jest",
     "build": "webpack",
     "build-prod": "webpack -p",
     "server": "webpack-dev-server",
