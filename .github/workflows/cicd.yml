@@ -19,14 +19,24 @@ jobs:
         node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-    
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
       with:
-        python-version: '3.9' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
-    - run: python my_script.py
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    steps:
+    - uses: actions/setup-python@v2
+    with:
+      python-version: '3.9'
+      cache: 'pip'
+    - run: pip install -r requirements.txt
+    - run: pip test    
+    
+
 
     - name: Start Redis
       uses: supercharge/redis-github-action@1.2.0
