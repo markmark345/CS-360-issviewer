@@ -6,8 +6,13 @@ const tleStringToArray = require('../app.js')
 const tleArrayToString = require('../app.js')
 const getCurrentPosition = require('../app')
 const startLoadTleData = require('../app')
-const {app, gracefulShutdown } = require('../app')
+const {app, gracefulShutdown} = require('../app')
 // const app = require('../app.js')
+beforeAll(async () => {
+    // await startLoadTleData();
+    const sld = startLoadTleData.__get__('startLoadTleData');
+    await sld();
+  });
 
 afterAll((done) => {
     gracefulShutdown();
