@@ -9,7 +9,7 @@ const startLoadTleData = require('../app')
 const {app, gracefulShutdown} = require('../app')
 // const app = require('../app.js')
 beforeAll(async () => {
-    // await startLoadTleData();
+    console.log("Before All")
     const sld = startLoadTleData.__get__('startLoadTleData');
     await sld();
   });
@@ -17,26 +17,6 @@ beforeAll(async () => {
 afterAll((done) => {
     gracefulShutdown();
     done();
-});
-
-describe("Test cache.js", () => {
-
-    describe("getTle", () => {
-        test("expect get data from radis", async () => {
-            const data = await getTle();
-            expect(data).not.toBeNull();
-        });
-    });
-
-    describe("getLocation", () => {
-        test('expect output consol.log from get location ', async () => {
-            const consoleSpy = jest.spyOn(console, 'log');
-            const data = await getLocation("bangkok");
-          
-            expect(consoleSpy).toHaveBeenCalledWith('location data from redis ', data);
-          });
-
-    });
 });
 
 describe("Test app.js", () => {
@@ -110,4 +90,25 @@ describe("Test app.js", () => {
           });
     });
     
+});
+
+
+describe("Test cache.js", () => {
+
+    describe("getTle", () => {
+        test("expect get data from radis", async () => {
+            const data = await getTle();
+            expect(data).not.toBeNull();
+        });
+    });
+
+    describe("getLocation", () => {
+        test('expect output consol.log from get location ', async () => {
+            const consoleSpy = jest.spyOn(console, 'log');
+            const data = await getLocation("bangkok");
+          
+            expect(consoleSpy).toHaveBeenCalledWith('location data from redis ', data);
+          });
+
+    });
 });

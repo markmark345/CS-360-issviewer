@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1639808463285" clover="3.2.0">
-  <project timestamp="1639808463285" name="All files">
+<coverage generated="1639808873089" clover="3.2.0">
+  <project timestamp="1639808873090" name="All files">
     <metrics statements="131" coveredstatements="102" conditionals="20" coveredconditionals="11" methods="28" coveredmethods="22" elements="179" coveredelements="135" complexity="0" loc="131" ncloc="131" packages="1" files="3" classes="3"/>
     <file name="app.js" path="C:\projects\cs360\CS_360_issviewer\app.js">
       <metrics statements="97" coveredstatements="73" conditionals="14" coveredconditionals="8" methods="13" coveredmethods="10"/>
