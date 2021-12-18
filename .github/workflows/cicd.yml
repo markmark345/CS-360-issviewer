@@ -32,7 +32,7 @@ jobs:
         #  cache: 'pip'
         #  architecture: 'x64'
     - run: pip install ephem
-    
+
     - name: Start Redis
       uses: supercharge/redis-github-action@1.2.0
       with:
