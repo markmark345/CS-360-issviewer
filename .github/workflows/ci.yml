@@ -42,7 +42,7 @@ jobs:
 
     - name: Verify that redis is up
       run: redis-cli ping
-      
+
     - run: npm test
     - name: Login to DockerHub
       uses: docker/login-action@v1
@@ -54,4 +54,4 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: markmark345/cs360-issviewer-imgS
+        tags: markmark345/cs360-issviewer-img
