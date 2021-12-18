@@ -187,16 +187,38 @@ app.get("/track", (req, res) =>
 });
 app.get("/predict/:locationName", predictResponse);
 
-// app.get("/test", (req, res) => {
-// 	res.status(200).send('test');
-// });
 var server = app.listen(PORT, () =>
 {
 	console.log(`Listening on ${PORT}`);
 });
 
-startLoadTleData();
-setInterval(fetchTleData, MS_PER_HOUR); // fetch new TLE hourly
-setInterval(updatePosition, ISS_TRACK_INTERVAL_MS); // calculate and store current position periodically
+const gracefulShutdown = () => {
+	clearInterval(fetchInterval);
+	clearInterval(updateInterval);
+	cache.close();
+	// state.isShutdown = true
+	console.info('Got SIGTERM. Graceful shutdown start', new Date().toISOString())
+	server.close(() => {
+		// console.log('Closed out remaining connections.')
+		// clearInterval(fetchInterval);
+		// clearInterval(updateInterval);
+		// cache.close();
+		// process.exit(0);
+	})
+	// setTimeout(() => {
+	// //    console.error('Could not close connections in time, forcefully shutting down')
 
-module.exports = server;
+	//    process.exit(0);
+	// }, 10 * 1000)
+ }
+
+// listen for TERM signal .e.g. kill
+process.on('SIGTERM', gracefulShutdown)
+// listen for INT signal e.g. Ctrl-C
+process.on('SIGINT', gracefulShutdown)
+
+startLoadTleData();
+var fetchInterval = setInterval(fetchTleData, MS_PER_HOUR); // fetch new TLE hourly
+var updateInterval = setInterval(updatePosition, ISS_TRACK_INTERVAL_MS); // calculate and store current position periodically
+
+module.exports = { app, gracefulShutdown };

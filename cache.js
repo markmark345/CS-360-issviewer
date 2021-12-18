@@ -1,7 +1,7 @@
 const redis = require("redis");
 
 const REDIS_PORT = 6379;
-const redisClient = redis.createClient(REDIS_PORT); //, 'redis-server' ); // เพิ่ม host redis แทน 127.0.0.1 process.env.REDIS_HOST || '127.0.0.1'
+const redisClient = redis.createClient(REDIS_PORT, '127.0.0.1'); //'redis-server' ); // เพิ่ม host redis แทน 127.0.0.1 process.env.REDIS_HOST || '127.0.0.1'
 
 module.exports =
 {
@@ -41,5 +41,9 @@ module.exports =
 	saveLocation: (locationName, location) =>
 	{
 		redisClient.hmset(`location:${locationName}`, location);
+	},
+
+	close: () => {
+		redisClient.quit();
 	}
 };

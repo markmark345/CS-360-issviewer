@@ -6,8 +6,13 @@ const tleStringToArray = require('../app.js')
 const tleArrayToString = require('../app.js')
 const getCurrentPosition = require('../app')
 const startLoadTleData = require('../app')
-const server = require('../app')
+const {app, gracefulShutdown } = require('../app')
+// const app = require('../app.js')
 
+afterAll((done) => {
+    gracefulShutdown();
+    done();
+});
 
 describe("Test cache.js", () => {
 
@@ -31,29 +36,26 @@ describe("Test cache.js", () => {
 
 describe("Test app.js", () => {
 
-    test("It should response the GET method", done => {
-        request(server)
+    test("It should response the GET method", async () => {
+        await request(app)
           .get("/")
           .then(response => {
             expect(response.statusCode).toBe(200);
-            done();
           });
       });
 
-      test("Expect track return 200", done => {
-        request(server)
+      test("Expect track return 200", async () => {
+        await request(app)
           .get("/track")
           .then(response => {
             expect(response.statusCode).toBe(200);
-            done();
           });
       });
-      test("Expect predict bangkok return status 200", done => {
-        request(server)
+      test("Expect predict bangkok return status 200", async () => {
+        await request(app)
           .get("/predict/bangkok")
           .then(response => {
             expect(response.statusCode).toBe(200);
-            done();
           });
       });
 
@@ -88,17 +90,19 @@ describe("Test app.js", () => {
             const sld = startLoadTleData.__get__('startLoadTleData');
             const data = await sld();
             expect(consoleSpy).toHaveBeenLastCalledWith("cached TLE is recent enough and will be used");
+
             console.log(data);
         });
     });
 
     describe("getCurrentPosition", () => {
         test('expect data height more than 0', async () => {
-            const gcp = await getCurrentPosition.__get__('getCurrentPosition');
-            const data = gcp();
+            const gcp = getCurrentPosition.__get__('getCurrentPosition');
+            const data = await gcp();
             console.log("data = ",data);
             console.log("data.ve = ",data.velocityKmph);
             expect(data.velocityKmph).toBeGreaterThan(1);
           });
     });
+    
 });
