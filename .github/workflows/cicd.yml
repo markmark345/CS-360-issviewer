@@ -9,7 +9,7 @@ on:
     branches: [ master ]
 
 jobs: 
-build:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -26,12 +26,12 @@ build:
         cache: 'npm'
 
 
-     - uses: actions/setup-python@v2
+    - uses: actions/setup-python@v2
        with:
          python-version: '3.9.1'
         #  cache: 'pip'
         #  architecture: 'x64'
-     - run: pip install ephem
+    - run: pip install ephem
      
      
     - name: Start Redis
