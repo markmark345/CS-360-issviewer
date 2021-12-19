@@ -7,7 +7,7 @@ const tleArrayToString = require('../app.js')
 const getCurrentPosition = require('../app')
 const startLoadTleData = require('../app')
 const {app, gracefulShutdown} = require('../app')
-// const app = require('../app.js')
+
 beforeAll(async () => {
     console.log("Before All")
     const sld = startLoadTleData.__get__('startLoadTleData');
@@ -19,7 +19,7 @@ afterAll((done) => {
     done();
 });
 
-describe("Test app.js", () => {
+describe("Test HTTP operation (app.js)", () => {
 
     test("It should response the GET method", async () => {
         await request(app)
@@ -93,7 +93,7 @@ describe("Test app.js", () => {
 });
 
 
-describe("Test cache.js", () => {
+describe("Test Redis Operation (cache.js)", () => {
 
     describe("getTle", () => {
         test("expect get data from radis", async () => {
