@@ -19,33 +19,33 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+    # - name: Use Node.js ${{ matrix.node-version }}
+    #   uses: actions/setup-node@v2
+    #   with:
+    #     node-version: ${{ matrix.node-version }}
+    #     cache: 'npm'
 
 
-    - uses: actions/setup-python@v2
-      with:
-        python-version: '3.9.1'
+    # - uses: actions/setup-python@v2
+    #   with:
+    #     python-version: '3.9.1'
 
-    - run: pip install ephem
+    # - run: pip install ephem
 
-    - name: Start Redis
-      uses: supercharge/redis-github-action@1.2.0
-      with:
-        redis-version: ${{ matrix.redis-version }}
+    # - name: Start Redis
+    #   uses: supercharge/redis-github-action@1.2.0
+    #   with:
+    #     redis-version: ${{ matrix.redis-version }}
 
-    - run: npm ci
+    # - run: npm ci
     
-    - run: npm run build --if-present
+    # - run: npm run build --if-present
 
-    - name: Install redis cli # so we can test the server
-      run: sudo apt-get install -y redis-tools
+    # - name: Install redis cli # so we can test the server
+    #   run: sudo apt-get install -y redis-tools
 
-    - name: Verify that redis is up
-      run: redis-cli ping
+    # - name: Verify that redis is up
+    #   run: redis-cli ping
     
     # - run: npm test
     
