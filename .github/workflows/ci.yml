@@ -1,5 +1,5 @@
 name: Issviewer CI
-# ด
+
 on:
   push:
     branches: [ dev ]
