@@ -20,7 +20,25 @@ afterAll((done) => {
 });
 
 describe("Test HTTP operation (app.js)", () => {
-
+    // expect.extend({
+    //     toBeIn: function(util, customEqualityTesters) {
+    //         return {
+    //             compare: function(actual, expected) {
+    //                 console.log("********");
+    //                 console.log(expected);
+    //                 console.log("********");
+    //                 var possibilities = Array.isArray(expected) ? expected : [expected];
+    //                 var passed = possibilities.indexOf(actual) > -1;
+    
+    //                 return {
+    //                     pass: passed,
+    //                     message: 'Expected [' + possibilities.join(', ') + ']' + (passed ? ' not' : '') + ' to contain ' + actual
+    //                 };
+    //             }
+    //         };
+    //     }
+    // });
+   
     test("It should response the GET method", async () => {
         await request(app)
           .get("/")
@@ -70,11 +88,18 @@ describe("Test HTTP operation (app.js)", () => {
     });
 
     describe("startLoadTleData", () => {
-        test("expect console log out equal ", async () => {
+        test("expect console log containing ", async () => {
             const consoleSpy = jest.spyOn(console, 'log');
             const sld = startLoadTleData.__get__('startLoadTleData');
             const data = await sld();
+
+            // console.log(consoleSpy);
             expect(consoleSpy).toHaveBeenLastCalledWith("cached TLE is recent enough and will be used");
+            // var possibilities = Array.isArray(consoleSpy) ? consoleSpy : [consoleSpy];
+            // console.log(possibilities[0]);
+            // console.log(x);
+            
+            // expect(consoleSpy).toBeIn(["cached TLE is recent enough and will be used", "cached TLE is old and will be redownloaded", "TLE wasn't found in cache and will be downloaded"]);
 
             console.log(data);
         });
