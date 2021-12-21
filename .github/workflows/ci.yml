@@ -1,3 +1,4 @@
+#ci
 name: Issviewer CI
 
 on:
@@ -34,7 +35,7 @@ jobs:
       with:
         redis-version: ${{ matrix.redis-version }}
     - run: npm ci
-    - run: npm run build --if-present
+    - run: npm run build --if-present 
 
     - name: Install redis cli # so we can test the server
       run: sudo apt-get install -y redis-tools
