@@ -181,7 +181,7 @@ async function predictResponse (req, res)
 	}
 }
 
-app.get("/track", (req, res) =>
+app.get("/monitor", (req, res) =>
 {
 	res.json(issPosition);
 });
