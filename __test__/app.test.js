@@ -49,7 +49,7 @@ describe("Test HTTP operation (app.js)", () => {
       // เป็นการ test ยิงไปที่ "/track" ควรจะส่ง response กลับมาเป็น 200
       test("Expect track return 200", async () => {
         await request(app)
-          .get("/track")
+          .get("/monitor")
           .then(response => {
             expect(response.statusCode).toBe(200);
           });
